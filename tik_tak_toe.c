@@ -20,8 +20,14 @@ void printWinner(char);
 int main(){
 
   char winner= ' ';
+  char response;
 
-  resetGame();
+  do{
+
+    winner=' ';
+    response=' ';
+
+    resetGame();
   while(winner==' ' && checkSpaces()!=0){
     printGame();
     playerMove();
@@ -39,12 +45,16 @@ int main(){
   printGame();
   printWinner(winner);
 
-  
+  printf("Would you like to play again(Y/N):");
+  scanf("%c");
+  scanf("%c",&response);
+  response=toupper(response);
 
-  
+  }while(response=='Y');
 
+  printf("THANKS FOR PLAYING....");
 
-
+ 
   return 0;
 
 }
